@@ -5,13 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Edu.Core.Dominio", "SM.Edu.Core.CQRS\SM.Edu.Core.Dominio.csproj", "{CDDDCED3-9483-4FAE-9D08-3A69FF81C3FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E74E649-1A39-407D-873C-99927B313142}"
-	ProjectSection(SolutionItems) = preProject
-		Diary.CQRS.vsmdi = Diary.CQRS.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Edu.Core", "SM.Edu.Core.CQRS.Configuration\SM.Edu.Core.csproj", "{D1EEE015-1847-4811-9DEA-B81BE0771A9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D7FEDCC-93F1-477B-98E3-581A013009B5}"
