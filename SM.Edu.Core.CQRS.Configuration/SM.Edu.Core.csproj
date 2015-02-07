@@ -8,8 +8,8 @@
     <ProjectGuid>{D1EEE015-1847-4811-9DEA-B81BE0771A9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Diary.CQRS.Configuration</RootNamespace>
-    <AssemblyName>Diary.CQRS.Configuration</AssemblyName>
+    <RootNamespace>SM.Edu.Core</RootNamespace>
+    <AssemblyName>SM.Edu.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContainerBootStrapper.cs" />
     <Compile Include="ServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

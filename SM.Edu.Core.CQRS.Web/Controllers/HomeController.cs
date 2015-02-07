@@ -13,17 +13,20 @@ namespace SM.Edu.Core.Web.Controllers
     public class HomeController : Controller
     {
         
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Model = ServiceLocator.ReportDatabase.GetItems();
             return View();
         }
 
+        [HttpGet]
         public ActionResult Add()
         {
             return View();
         }
 
+        [HttpDelete]
         public ActionResult Delete(Guid id)
         {
             var item = ServiceLocator.ReportDatabase.GetById(id);
@@ -32,13 +35,12 @@ namespace SM.Edu.Core.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(DiaryItemDto item)
+        public void Add(DiaryItemDto item)
         {
             ServiceLocator.CommandBus.Send(new CreateItemCommand(Guid.NewGuid(),item.Title,item.Description,-1,item.From,item.To));
-
-            return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Edit(Guid id)
         {
             var item = ServiceLocator.ReportDatabase.GetById(id);
@@ -53,23 +55,11 @@ namespace SM.Edu.Core.Web.Controllers
                 };
             return View(model);
         }
+
         [HttpPost]
-        public ActionResult Edit(DiaryItemDto item)
+        public void Edit(DiaryItemDto item)
         {
-            try
-            {
-                ServiceLocator.CommandBus.Send(new ChangeItemCommand(item.Id, item.Title, item.Description, item.From, item.To, item.Version));
-            }
-            catch (ConcurrencyException err)
-            {
-
-                ViewBag.error = err.Message;
-                ModelState.AddModelError("", err.Message);
-                return View();
-
-            }
-            
-            return RedirectToAction("Index");
+            ServiceLocator.CommandBus.Send(new ChangeItemCommand(item.Id, item.Title, item.Description, item.From, item.To, item.Version));
         }
     }
 }

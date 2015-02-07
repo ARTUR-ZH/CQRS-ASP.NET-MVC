@@ -9,9 +9,9 @@ namespace SM.Edu.Core.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
-                         "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/cdn/Scripts/vendor/jquery/jquery-{version}.js",
+                        "~/cdn/Scripts/vendor/jquery/jquery.unobtrusive*",
+                        "~/cdn/Scripts/vendor/jquery/jquery.validate*"));
 
         }
     }
